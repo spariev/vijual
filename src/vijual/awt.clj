@@ -1,5 +1,6 @@
 (ns vijual.awt
-  (:require [vijual :refer :all])
+  (:require [vijual.core :refer :all]
+            [clojure.math.numeric-tower :refer [floor abs ceil]])
   (:import (java.io File)
            (javax.imageio ImageIO)
            (java.awt Color)

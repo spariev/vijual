@@ -1,10 +1,15 @@
-(ns vijual
-  (:use clojure.contrib.math)
-  (:use [clojure.contrib.seq-utils :only (positions)]))
+(ns vijual.core
+  (:require [clojure.math.numeric-tower :refer [floor abs ceil]]))
 
 ;;Maintained By Conrad Barski- Licensed under GPLV3
 
 ;; Common functions to all layout algorithms
+
+(defn positions [pred coll]
+  (keep-indexed (fn [idx x]
+                  (if (pred x)
+                    idx))
+                coll))
 
 (defn half [x]
   (/ x 2))
